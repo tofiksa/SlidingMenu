@@ -24,14 +24,14 @@ public class LeftAndRightActivity extends BaseActivity {
 		getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
 		
 		setContentView(R.layout.content_frame);
-		getSupportFragmentManager()
+		getFragmentManager()
 		.beginTransaction()
 		.replace(R.id.content_frame, new SampleListFragment())
 		.commit();
 		
 		getSlidingMenu().setSecondaryMenu(R.layout.menu_frame_two);
 		getSlidingMenu().setSecondaryShadowDrawable(R.drawable.shadowright);
-		getSupportFragmentManager()
+		getFragmentManager()
 		.beginTransaction()
 		.replace(R.id.menu_frame_two, new SampleListFragment())
 		.commit();

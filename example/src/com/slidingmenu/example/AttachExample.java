@@ -1,11 +1,11 @@
 package com.slidingmenu.example;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 
 import com.slidingmenu.lib.SlidingMenu;
 
-public class AttachExample extends FragmentActivity {
+public class AttachExample extends Activity {
 
 	private SlidingMenu menu;
 
@@ -17,7 +17,7 @@ public class AttachExample extends FragmentActivity {
 
 		// set the Above View
 		setContentView(R.layout.content_frame);
-		getSupportFragmentManager()
+		getFragmentManager()
 		.beginTransaction()
 		.replace(R.id.content_frame, new SampleListFragment())
 		.commit();
@@ -31,7 +31,7 @@ public class AttachExample extends FragmentActivity {
 		menu.setFadeDegree(0.35f);
 		menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
 		menu.setMenu(R.layout.menu_frame);
-		getSupportFragmentManager()
+		getFragmentManager()
 		.beginTransaction()
 		.replace(R.id.menu_frame, new SampleListFragment())
 		.commit();

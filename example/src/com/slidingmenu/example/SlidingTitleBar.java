@@ -1,7 +1,6 @@
 package com.slidingmenu.example;
 
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
 
 
 public class SlidingTitleBar extends BaseActivity {
@@ -16,7 +15,7 @@ public class SlidingTitleBar extends BaseActivity {
 
 		// set the Above View
 		setContentView(R.layout.content_frame);
-		getSupportFragmentManager()
+		getFragmentManager()
 		.beginTransaction()
 		.replace(R.id.content_frame, new SampleListFragment())
 		.commit();

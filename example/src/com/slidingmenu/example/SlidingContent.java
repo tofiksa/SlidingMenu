@@ -15,7 +15,7 @@ public class SlidingContent extends BaseActivity {
 
 		// set the Above View
 		setContentView(R.layout.content_frame);
-		getSupportFragmentManager()
+		getFragmentManager()
 		.beginTransaction()
 		.replace(R.id.content_frame, new SampleListFragment())
 		.commit();

@@ -46,7 +46,7 @@ public class PropertiesActivity extends BaseActivity {
 				case R.id.left_right:
 					sm.setMode(SlidingMenu.LEFT_RIGHT);
 					sm.setSecondaryMenu(R.layout.menu_frame_two);
-					getSupportFragmentManager()
+					getFragmentManager()
 					.beginTransaction()
 					.replace(R.id.menu_frame_two, new SampleListFragment())
 					.commit();					

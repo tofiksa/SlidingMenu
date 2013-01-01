@@ -1,13 +1,13 @@
 package com.slidingmenu.example.fragments;
 
 import android.app.AlertDialog;
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.Fragment;
+import android.view.MenuItem;
 import android.view.View;
 
-import com.actionbarsherlock.view.MenuItem;
 import com.slidingmenu.example.R;
 import com.slidingmenu.lib.SlidingMenu;
 import com.slidingmenu.lib.app.SlidingFragmentActivity;
@@ -40,7 +40,7 @@ public class ResponsiveUIActivity extends SlidingFragmentActivity {
 			getSlidingMenu().setSlidingEnabled(true);
 			getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
 			// show home as up so we can toggle
-			getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+			getActionBar().setDisplayHomeAsUpEnabled(true);
 		} else {
 			// add a dummy view
 			View v = new View(this);
@@ -51,16 +51,16 @@ public class ResponsiveUIActivity extends SlidingFragmentActivity {
 
 		// set the Above View Fragment
 		if (savedInstanceState != null)
-			mContent = getSupportFragmentManager().getFragment(savedInstanceState, "mContent");
+			mContent = getFragmentManager().getFragment(savedInstanceState, "mContent");
 		if (mContent == null)
 			mContent = new BirdGridFragment(0);	
-		getSupportFragmentManager()
+		getFragmentManager()
 		.beginTransaction()
 		.replace(R.id.content_frame, mContent)
 		.commit();
 
 		// set the Behind View Fragment
-		getSupportFragmentManager()
+		getFragmentManager()
 		.beginTransaction()
 		.replace(R.id.menu_frame, new BirdMenuFragment())
 		.commit();
@@ -93,12 +93,12 @@ public class ResponsiveUIActivity extends SlidingFragmentActivity {
 	@Override
 	public void onSaveInstanceState(Bundle outState) {
 		super.onSaveInstanceState(outState);
-		getSupportFragmentManager().putFragment(outState, "mContent", mContent);
+		getFragmentManager().putFragment(outState, "mContent", mContent);
 	}
 
 	public void switchContent(final Fragment fragment) {
 		mContent = fragment;
-		getSupportFragmentManager()
+		getFragmentManager()
 		.beginTransaction()
 		.replace(R.id.content_frame, fragment)
 		.commit();
