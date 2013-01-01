@@ -1,41 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+
 	<groupId>com.slidingmenu</groupId>
-	<artifactId>parent</artifactId>
-	<version>1.3-SNAPSHOT</version>
+	<artifactId>slidingmenu-parent</artifactId>
 	<packaging>pom</packaging>
+	<version>20130101-fdc-SNAPSHOT</version>
+
+	<name>SlidingMenu FDC (Parent)</name>
+	<description>Android library for implementing an off-canvas menu.</description>
 
 	<modules>
 		<module>library</module>
-		<module>library-maps-support</module>
+		<module>example</module>
 	</modules>
+
+	<scm>
+		<url>https://github.com/alfthomas/SlidingMenu/</url>
+		<connection>scm:git:git://github.com/alfthomas/SlidingMenu.git</connection>
+		<developerConnection>scm:git:git@github.com:alfthomas/SlidingMenu.git</developerConnection>
+	</scm>
+
+	<licenses>
+		<license>
+			<name>Apache License Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<java.version>1.6</java.version>
+		<android.version>4.1.1.4</android.version>
+		<android.platform>16</android.platform>
+		
+		<android-maven.version>3.4.1</android-maven.version>
+	</properties>
 
 	<dependencyManagement>
 		<dependencies>
-            <dependency>
-                <groupId>com.slidingmenu</groupId>
-                <artifactId>slidingmenu</artifactId>
-                <version>${project.version}</version>
-                <type>jar</type>
-            </dependency>
 			<dependency>
 				<groupId>com.google.android</groupId>
 				<artifactId>android</artifactId>
-				<version>4.1.1.4</version>
+				<version>${android.version}</version>
 			</dependency>
-			<dependency>
-				<groupId>com.google.android.maps</groupId>
-				<artifactId>maps</artifactId>
-				<version>17_r1</version>
-			</dependency>
-			<dependency>
-				<groupId>com.google.android</groupId>
-				<artifactId>support-v4</artifactId>
-				<version>r7</version>
-			</dependency>
+
+            <dependency>
+                <groupId>android.support</groupId>
+                <artifactId>compatibility-v13</artifactId>
+                <version>11</version>
+            </dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -43,19 +58,54 @@
 		<pluginManagement>
 			<plugins>
 				<plugin>
-					<groupId>com.jayway.maven.plugins.android.generation2</groupId>
-					<artifactId>android-maven-plugin</artifactId>
-					<version>3.5.0</version>
-
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.0</version>
 					<configuration>
-						<sdk>
-							<platform>16</platform>
-						</sdk>
-						<undeployBeforeDeploy>true</undeployBeforeDeploy>
+						<source>${java.version}</source>
+						<target>${java.version}</target>
 					</configuration>
 				</plugin>
-			</plugins>
+
+				<plugin>
+					<groupId>com.jayway.maven.plugins.android.generation2</groupId>
+					<artifactId>android-maven-plugin</artifactId>
+					<version>${android-maven.version}</version>
+					<configuration>
+						<sdk>
+							<platform>${android.platform}</platform>
+						</sdk>
+					</configuration>
+				</plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>2.2.1</version>
+                    <executions>
+                        <execution>
+                            <id>attach-sources</id>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>2.9</version>
+                    <executions>
+                        <execution>
+                            <id>attach-javadocs</id>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
 		</pluginManagement>
 	</build>
-
 </project>
