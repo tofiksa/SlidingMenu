@@ -5,7 +5,7 @@
 	<groupId>com.slidingmenu</groupId>
 	<artifactId>slidingmenu-parent</artifactId>
 	<packaging>pom</packaging>
-	<version>20130101-fdc-SNAPSHOT</version>
+	<version>20130206-fdc</version>
 
 	<name>SlidingMenu FDC (Parent)</name>
 	<description>Android library for implementing an off-canvas menu.</description>
