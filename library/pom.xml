@@ -9,7 +9,7 @@
 	<parent>
 		<groupId>com.slidingmenu</groupId>
 		<artifactId>slidingmenu-parent</artifactId>
-		<version>20130412-fdc</version>
+		<version>20130416-fdc</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 
