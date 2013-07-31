@@ -271,7 +271,7 @@ public class SlidingMenu extends RelativeLayout {
 		}
         int secondaryShadowRes = ta.getResourceId(R.styleable.SlidingMenu_secondaryShadowDrawable, -1);
         if (secondaryShadowRes != -1) {
-            setSecondaryShadowDrawable(shadowRes);
+            setSecondaryShadowDrawable(secondaryShadowRes);
         }
 		int shadowWidth = (int) ta.getDimension(R.styleable.SlidingMenu_shadowWidth, 0);
 		setShadowWidth(shadowWidth);
