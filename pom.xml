@@ -5,20 +5,25 @@
 	<groupId>com.slidingmenu</groupId>
 	<artifactId>slidingmenu-parent</artifactId>
 	<packaging>pom</packaging>
-	<version>20130510-fdc</version>
+	<version>20130510-fdc-r2</version>
+
+    <parent>
+        <groupId>no.finntech</groupId>
+        <artifactId>savin-maven-pom</artifactId>
+        <version>7</version>
+    </parent>
 
 	<name>SlidingMenu FDC (Parent)</name>
 	<description>Android library for implementing an off-canvas menu.</description>
 
 	<modules>
 		<module>library</module>
-		<module>example</module>
 	</modules>
 
 	<scm>
-		<url>https://github.com/alfthomas/SlidingMenu/</url>
-		<connection>scm:git:git://github.com/alfthomas/SlidingMenu.git</connection>
-		<developerConnection>scm:git:git@github.com:alfthomas/SlidingMenu.git</developerConnection>
+		<url>https://github.com/finn-no/SlidingMenu/</url>
+		<connection>scm:git:git://github.com/finn-no/SlidingMenu.git</connection>
+		<developerConnection>scm:git:git@github.com:finn-no/SlidingMenu.git</developerConnection>
 	</scm>
 
 	<licenses>
@@ -35,7 +40,7 @@
 		<android.version>4.1.1.4</android.version>
 		<android.platform>16</android.platform>
 		
-		<android-maven.version>3.4.1</android-maven.version>
+		<android-maven.version>3.6.0</android-maven.version>
 	</properties>
 
 	<dependencyManagement>
