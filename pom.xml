@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+    <prerequisites>
+        <maven>${maven.version.minimum}</maven>
+    </prerequisites>
 
-	<groupId>com.slidingmenu</groupId>
-	<artifactId>slidingmenu-parent</artifactId>
-	<packaging>pom</packaging>
-	<version>20130510-fdc-r2</version>
+    <groupId>com.slidingmenu</groupId>
+    <artifactId>slidingmenu-parent</artifactId>
+    <packaging>pom</packaging>
+    <version>20130510-fdc-r3</version>
 
     <parent>
         <groupId>no.finntech</groupId>
@@ -18,6 +21,7 @@
 
 	<modules>
 		<module>library</module>
+		<module>example</module>
 	</modules>
 
 	<scm>
@@ -34,13 +38,14 @@
 	</licenses>
 
 	<properties>
+		<maven.version.minimum>3.0.4</maven.version.minimum>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 		<java.version>1.6</java.version>
 		<android.version>4.1.1.4</android.version>
 		<android.platform>16</android.platform>
-		
-		<android-maven.version>3.6.0</android-maven.version>
+
+		<android-maven.version>3.6.1</android-maven.version>
 	</properties>
 
 	<dependencyManagement>
